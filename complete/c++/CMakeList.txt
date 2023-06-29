@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.12)
+project(opentelemetry_cpp_rust_integration)
+
+set(CMAKE_CXX_STANDARD 14)
+
+find_package(OpenTelemetry REQUIRED)
+find_package(Threads REQUIRED)
+
+# Include the OpenTelemetry headers
+include_directories(${OPENTELEMETRY_INCLUDE_DIRS})
+
+# Build the C++ application
+add_executable(opentelemetry_cpp_rust_integration main.cpp)
+
+# Link the necessary libraries
+target_link_libraries(opentelemetry_cpp_rust_integration PRIVATE ${OPENTELEMETRY_LIBRARIES})
+target_link_libraries(opentelemetry_cpp_rust_integration PRIVATE Threads::Threads)
