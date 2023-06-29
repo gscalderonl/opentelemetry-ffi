@@ -8,7 +8,12 @@ opentelemetry = "0.16"
 opentelemetry-otlp = "0.12"
 opentelemetry-jaeger = "0.16"
 tonic = "0.4"
+protobuf = "2.0"
+protobuf-codegen = "2.0"
 
 [[bin]]
 name = "cxx"
 path = "src/cxx.rs"
+
+[build-dependencies]
+tonic-build = "0.4.2"
